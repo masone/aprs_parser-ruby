@@ -1,0 +1,24 @@
+module AprsParser
+  module Enums
+    extend FFI::Library
+
+    ErrorCode = enum [
+      :fapPACKET_NO, :fapPACKET_SHORT, :fapPACKET_NOBODY, :fapSRCCALL_NOAX25,
+      :fapSRCCALL_BADCHARS, :fapDSTPATH_TOOMANY, :fapDSTCALL_NONE, :fapDSTCALL_NOAX25,
+      :fapDIGICALL_NOAX25, :fapDIGICALL_BADCHARS, :fapTIMESTAMP_INV_LOC, :fapTIMESTAMP_INV_OBJ,
+      :fapTIMESTAMP_INV_STA, :fapTIMESTAMP_INV_GPGGA, :fapTIMESTAMP_INV_GPGLL, :fapPACKET_INVALID,
+      :fapNMEA_INV_CVAL, :fapNMEA_LARGE_EW, :fapNMEA_LARGE_NS, :fapNMEA_INV_SIGN,
+      :fapNMEA_INV_CKSUM, :fapGPRMC_FEWFIELDS, :fapGPRMC_NOFIX, :fapGPRMC_INV_TIME,
+      :fapGPRMC_INV_DATE, :fapGPRMC_DATE_OUT, :fapGPGGA_FEWFIELDS, :fapGPGGA_NOFIX,
+      :fapGPGLL_FEWFIELDS, :fapGPGLL_NOFIX, :fapNMEA_UNSUPP, :fapOBJ_SHORT,
+      :fapOBJ_INV, :fapOBJ_DEC_ERR, :fapITEM_SHORT, :fapITEM_INV,
+      :fapITEM_DEC_ERR, :fapLOC_SHORT, :fapLOC_INV, :fapLOC_LARGE,
+      :fapLOC_AMB_INV, :fapMICE_SHORT, :fapMICE_INV, :fapMICE_INV_INFO,
+      :fapMICE_AMB_LARGE, :fapMICE_AMB_INV, :fapMICE_AMB_ODD, :fapCOMP_INV,
+      :fapCOMP_SHORT, :fapMSG_INV, :fapWX_UNSUPP, :fapUSER_UNSUPP,
+      :fapDX_INV_SRC, :fapDX_INF_FREQ, :fapDX_NO_DX, :fapTLM_INV,
+      :fapTLM_LARGE, :fapTLM_UNSUPP, :fapEXP_UNSUPP, :fapSYM_INV_TABLE,
+      :fapNOT_IMPLEMENTED, :fapNMEA_NOFIELDS, :fapNO_APRS
+    ]
+  end
+end

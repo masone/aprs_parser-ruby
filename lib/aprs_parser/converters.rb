@@ -1,0 +1,5 @@
+require 'aprs_parser/converters/double_pointer'
+require 'aprs_parser/converters/uint_pointer'
+require 'aprs_parser/converters/short_pointer'
+require 'aprs_parser/converters/timestamp'
+require 'aprs_parser/converters/path'
