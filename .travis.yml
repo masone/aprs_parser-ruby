@@ -1,3 +1,12 @@
 language: ruby
 rvm:
-  - 2.0.0
+  - 2.2.2
+
+before_install:
+  - wget http://www.pakettiradio.net/downloads/libfap/1.5/libfap-1.5.tar.gz
+  - tar -xzf libfap-1.5.tar.gz
+  - cd libfap-1.5 && ./configure --prefix=/usr && make && sudo make install
+
+script:
+  - bundle install
+  - bundle exec rake test
