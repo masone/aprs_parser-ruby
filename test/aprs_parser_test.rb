@@ -148,7 +148,7 @@ describe AprsParser do
       end
 
       it 'extracts timestamp' do
-        assert_equal 1_434_351_180, parsed_location[:timestamp]
+        assert_equal 1_439_617_980, parsed_location[:timestamp]
       end
 
       it 'extracts nmea_checksum_ok' do
