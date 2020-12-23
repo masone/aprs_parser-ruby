@@ -8,7 +8,7 @@ module AprsParser
       extend AprsParser::TypeSafety
 
       layout error_code: AprsParser::Enums::ErrorCode,
-             type: :pointer, # AprsParser::Enums::PacketType,
+             type: AprsParser::Enums::PacketType,
              orig_packet: :string,
              orig_packet_len: :uint,
              header: :string,
@@ -20,7 +20,7 @@ module AprsParser
              path_len: :uint,
              latitude: AprsParser::Converters::DoublePointer,
              longitude: AprsParser::Converters::DoublePointer,
-             format: :pointer, # AprsParser::Enums::PosFormat,
+             format: AprsParser::Enums::PosFormat,
              pos_resolution: AprsParser::Converters::DoublePointer,
              pos_ambiguity: AprsParser::Converters::UintPointer,
              dao_datum_byte: :char,
@@ -29,7 +29,7 @@ module AprsParser
              speed: AprsParser::Converters::DoublePointer,
              symbol_table: :char,
              symbol_code: :char,
-             messaging: AprsParser::Converters::ShortPointer,
+             messaging: :pointer, #AprsParser::Converters::ShortPointer, 
              destination: :string,
              message: :string,
              message_ack: :string,
@@ -43,7 +43,12 @@ module AprsParser
              radio_range: AprsParser::Converters::UintPointer,
              phg: :string,
              timestamp: AprsParser::Converters::Timestamp,
-             nmea_checksum_ok: AprsParser::Converters::ShortPointer
+             nmea_checksum_ok: AprsParser::Converters::ShortPointer,
+             messagebits: :char,
+             status: :char,
+             status_len: :uint,
+             capabilities: :char,
+             capabilities_len: :uint
     end
   end
 end

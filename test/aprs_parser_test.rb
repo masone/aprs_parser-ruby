@@ -24,9 +24,9 @@ describe AprsParser do
         assert_equal :fapPACKET_NO, parsed_location[:error_code]
       end
 
-      # it 'extracts type' do
-      #   assert_equal :fapLOCATION, parsed_location[:type]
-      # end
+      it 'extracts type' do
+        assert_equal :fapLOCATION, parsed_location[:type]
+      end
 
       it 'extracts orig_packet_len' do
         assert_equal 67, parsed_location[:orig_packet_len]
